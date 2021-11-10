@@ -1,0 +1,19 @@
+{
+  "name": "yerli_imdb",
+  "version": "1.0.0",
+  "description": "Yerli ve milli 100% imdb projesi",
+  "main": "index.js",
+  "scripts": {
+    "sass": "node-sass -w scss/ -o dist/css/ --recursive"
+  },
+  "keywords": [
+    "yerli",
+    "ve",
+    "milli"
+  ],
+  "author": "Berkant Cen",
+  "license": "ISC",
+  "dependencies": {
+    "node-sass": "^6.0.1"
+  }
+}

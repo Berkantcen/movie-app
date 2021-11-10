@@ -1,0 +1,128 @@
+@import "variables";
+@import "mixin";
+
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;700&display=swap");
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  width: 100vw;
+  min-height: 100vh;
+  font-family: $font-family;
+  display: flex;
+  background-color: $bg-darken;
+  flex-direction: column;
+}
+
+// MAIN HEADER
+
+.main-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0 40px;
+  width: 100%;
+  height: 80px;
+  background-color: $bg-dark;
+
+  img {
+    height: 100%;
+    padding: 10px;
+    color: $text-light;
+  }
+
+  .search-form {
+    display: flex;
+
+    #search-input,
+    .search-btn {
+      font-size: 1.2rem;
+      padding: 10px;
+      border: none;
+      color: $text-light;
+      background-color: $bg-darken;
+      transition: all 0.5s ease-in-out;
+    }
+
+    .search-btn {
+      z-index: 100;
+      cursor: pointer;
+    }
+
+    #search-input {
+      width: 200px;
+
+      &.hide {
+        width: 30px;
+        transform: translateX(-30px);
+      }
+
+      &:focus {
+        outline: none;
+      }
+    }
+  }
+}
+
+// MOVIE BOX
+
+.movies-container {
+  display: flex;
+  align-items: center;
+  padding: 50px 100px;
+  flex-wrap: wrap;
+
+  .movie-box {
+    position: relative;
+    width: 300px;
+    height: 550px;
+    overflow: hidden;
+    background-color: $bg-dark;
+    color: $text-light;
+    border-radius: 10px;
+    margin: 1rem;
+    transition: all 0.2s ease-in;
+
+    &:hover {
+      transform: scale(1.1);
+      .movie-overview {
+        transform: translateY(0);
+      }
+    }
+
+    .movie-overview {
+      position: absolute;
+      overflow-y: auto;
+      max-height: 100%;
+      bottom: 0;
+      left: 0;
+      right: 0;
+      width: 100%;
+      background-color: rgba(255, 255, 255, 0.8);
+      color: $bg-dark;
+      text-align: center;
+      padding: 20px 10px;
+      transform: translateY(102%);
+      transition: all 0.4s ease-in;
+      transition-delay: 0.2s;
+    }
+
+    img {
+      width: 100%;
+    }
+
+    .movie-info {
+      width: 100%;
+      padding: 20px;
+      display: flex;
+      justify-content: space-between;
+      .movie-title {
+        font-size: 1.2rem;
+      }
+    }
+  }
+}

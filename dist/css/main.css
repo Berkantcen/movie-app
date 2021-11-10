@@ -1,0 +1,90 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;700&display=swap");
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box; }
+
+body {
+  width: 100vw;
+  min-height: 100vh;
+  font-family: "Poppins", sans-serif;
+  display: flex;
+  background-color: #0a0908;
+  flex-direction: column; }
+
+.main-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0 40px;
+  width: 100%;
+  height: 80px;
+  background-color: #22333b; }
+  .main-header img {
+    height: 100%;
+    padding: 10px;
+    color: #f2f4f3; }
+  .main-header .search-form {
+    display: flex; }
+    .main-header .search-form #search-input,
+    .main-header .search-form .search-btn {
+      font-size: 1.2rem;
+      padding: 10px;
+      border: none;
+      color: #f2f4f3;
+      background-color: #0a0908;
+      transition: all 0.5s ease-in-out; }
+    .main-header .search-form .search-btn {
+      z-index: 100;
+      cursor: pointer; }
+    .main-header .search-form #search-input {
+      width: 200px; }
+      .main-header .search-form #search-input.hide {
+        width: 30px;
+        transform: translateX(-30px); }
+      .main-header .search-form #search-input:focus {
+        outline: none; }
+
+.movies-container {
+  display: flex;
+  align-items: center;
+  padding: 50px 100px;
+  flex-wrap: wrap; }
+  .movies-container .movie-box {
+    position: relative;
+    width: 300px;
+    height: 550px;
+    overflow: hidden;
+    background-color: #22333b;
+    color: #f2f4f3;
+    border-radius: 10px;
+    margin: 1rem;
+    transition: all 0.2s ease-in; }
+    .movies-container .movie-box:hover {
+      transform: scale(1.1); }
+      .movies-container .movie-box:hover .movie-overview {
+        transform: translateY(0); }
+    .movies-container .movie-box .movie-overview {
+      position: absolute;
+      overflow-y: auto;
+      max-height: 100%;
+      bottom: 0;
+      left: 0;
+      right: 0;
+      width: 100%;
+      background-color: rgba(255, 255, 255, 0.8);
+      color: #22333b;
+      text-align: center;
+      padding: 20px 10px;
+      transform: translateY(102%);
+      transition: all 0.4s ease-in;
+      transition-delay: 0.2s; }
+    .movies-container .movie-box img {
+      width: 100%; }
+    .movies-container .movie-box .movie-info {
+      width: 100%;
+      padding: 20px;
+      display: flex;
+      justify-content: space-between; }
+      .movies-container .movie-box .movie-info .movie-title {
+        font-size: 1.2rem; }
